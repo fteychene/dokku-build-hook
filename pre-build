@@ -11,4 +11,5 @@ if [ -f "hooks/pre-build" ]; then
     fi
      dokku_log_info2 "Running pre-build script"
      hooks/pre-build
+     dokku_log_info2 "End of pre-build script"
 fi
