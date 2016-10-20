@@ -4,10 +4,7 @@ source "$PLUGIN_CORE_AVAILABLE_PATH/common/functions"
 
 APP="$1";
 dokku_log_info1 "Checking for pre-build script"
-
-ls -alh
-
-if [ -f "$TMP_WORK_DIR/hooks/pre-build" ]; then
-    dokku_log_info1 "Detected pre-build script"
-    $DOKKU_ROOT/$APP/hook/pre-build
+if [ -f "hooks/pre-build" ]; then
+    dokku_log_info2 "Detected pre-build script"
+    hook/pre-build
 fi
