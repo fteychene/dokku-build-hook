@@ -18,9 +18,27 @@ dokku plugin:install https://github.com/fteychene/dokku-build-hook.git build-hoo
 
 ## Usage
 
-The plugin will search for scripts in application codebase to be executed on differents phases of the build.
+The plugin will search for scripts in application codebase to be executed on different phases of the build.
 
-The scripts should be installed in a `hooks` directory in the project codebase and be name as the corresponding hook.
+The scripts should be installed in a `hooks` directory in the project codebase and be name as the corresponding hook you want to trigger.
 
 Hooks :
  - [x] pre-build : This script will be executed before the build of the project (Buildpack or Dockerfile based)
+
+
+## Example
+
+Add a script `hooks/pre_build` in a dokku project.
+```bash
+#!/usr/bin/env bash
+
+echo "Run something before dokku build the project"
+```
+
+When deploying you app to dokku you should see the following instructions before build
+```
+-----> Checking for pre-build script
+=====> Running pre-build script
+Run something before dokku build the project
+=====> End of pre-build script
+```
