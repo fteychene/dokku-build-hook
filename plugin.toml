@@ -1,0 +1,4 @@
+[plugin]
+description = "Dokku plugin to add hooks before build for applications."
+version = "1.0.0-SNAPSHOT"
+[plugin.config]

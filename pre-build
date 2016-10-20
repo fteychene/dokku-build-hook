@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
+
+APP="$1";
+echo "Checking for pre-build script"
+
+#
+if [ -f "$TMP_WORK_DIR/hooks/pre-build" ]; then
+    echo "Detected pre-build script"
+    $DOKKU_ROOT/$APP/hook/pre-build
+fi
