@@ -2,7 +2,7 @@
 
 *Add hook for application to prepare build*
 
-This plugin aim applications that requires to run some commands before build and offer a way to run these commands in dokku build lyfecycle.
+This plugin aim applications that requires to run some commands before build and offer a way to run these commands in dokku build lifecycle.
 
 ## Installation
 
@@ -23,4 +23,4 @@ The plugin will search for scripts in application codebase to be executed on dif
 The scripts should be installed in a `hooks` directory in the project codebase and be name as the corresponding hook.
 
 Hooks :
- - [ ] pre-build : This script will be executed before the build of the project (Buildpack or Dockerfile based)
+ - [x] pre-build : This script will be executed before the build of the project (Buildpack or Dockerfile based)
