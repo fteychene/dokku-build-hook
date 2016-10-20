@@ -5,6 +5,9 @@ source "$PLUGIN_CORE_AVAILABLE_PATH/common/functions"
 APP="$1";
 dokku_log_info1 "Checking for pre-build script"
 if [ -f "hooks/pre-build" ]; then
-    dokku_log_info2 "Detected pre-build script"
-    hook/pre-build
+    if [ ! -x "hooks/pre-build" ]; then
+        dokku_log_warn "Adding missing execution permission. Please change the permission on your codebase."
+    fi
+     dokku_log_info2 "Running pre-build script"
+     hooks/pre-build
 fi
