@@ -28,7 +28,7 @@ Hooks :
 
 ## Example
 
-Add a script `hooks/pre_build` in a dokku project.
+Add a script `hooks/pre-build` in a dokku project.
 ```bash
 #!/usr/bin/env bash
 
